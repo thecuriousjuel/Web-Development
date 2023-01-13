@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo selectors and designing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+        * {
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+        .container {
+            background-color: rgba(212, 67, 67, 0.514);
+            border: 2px solid black;
+            padding: 50px;
+            margin: 50px auto;
+            width: 50%;
+        }
+
+        .btn {
+            background-color: white;
+            padding: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            border-radius: 20px;
+        }
+
+        .btn:hover {
+            background-color: white;
+            padding: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+            background-color: black;
+        }
+
+        a:visited {
+            color: yellow;
+            background-color: black;
+        }
+
+        a:active {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="cont1">
+        <h3>Heading</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde neque, blanditiis dignissimos tempora laborum
+            recusandae sapiente, numquam veniam, maiores architecto non facilis voluptatum? Officia sequi fuga rem ullam
+            iure, adipisci quas delectus eveniet, atque debitis asperiores consequuntur cumque, eum dolor ab porro autem
+            harum maxime! Consectetur autem unde aperiam ipsa.</p>
+        <a href="http://www.google.co.in" class="btn">Read me</a>
+        <button class="btn">Button</button>
+    </div>
+
+</body>
+
+</html>

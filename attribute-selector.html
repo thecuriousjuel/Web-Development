@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selector</title>
+    <style>
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input[type] {
+            border: 2px solid orangered;
+
+        }
+
+        input[type="text"] {
+            background-color: palegreen;
+        }
+
+        input[type="email"] {
+            background-color: aqua;
+        }
+
+        input[type="button"] {
+            border: 2px solid green;
+            background-color: dodgerblue;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CSS Attribute Selector</h2>
+    <input type="text" name="" id="" placeholder="TEXT">
+    <input type="email" name="" id="" placeholder="EMAIL">
+    <input type="button" name="" id="" value="Click me">
+</body>
+
+</html>
