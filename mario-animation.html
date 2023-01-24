@@ -5,28 +5,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animation</title>
     <style>
-        .super_mario {
+        .blockContainer {
             display: flex;
+            height: 90vh;
             flex-direction: column;
+            align-items: center;
+            /* background-color: aquamarine; */
+            justify-content: space-between;
         }
 
-        #coin img {
-            width: 2%;
-        }
-
-        #box img {
+        #coin {
+            /* border: 5px solid red; */
             width: 5%;
+            height: auto;
+            animation-name: coin;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes coin {
+            0% {
+                transform: rotateY(0deg) scale(0) translateY(-0px);
+                opacity: 0%;
+            }
+
+            100% {
+                transform: rotateY(360deg) scale(1) translateY(-50px);
+                opacity: 100%;
+            }
+        }
+
+
+        #block {
+            /* border: 5px solid blue; */
+            width: 7%;
+            height: auto;
+            animation-name: block;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+
+        @keyframes block {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-50px);
+            }
+        }
+
+
+        #mario {
+            /* border: 5px solid yellow; */
+            width: 20%;
+            height: auto;
         }
     </style>
 </head>
 
 <body>
-    <div class="super_mario">
-        <div id="coin"><img src="images/coin.png" alt=""></div>
-        <div id="box"><img src="images/box.png" alt=""></div>
-        <div id="mario"><img src="images/mario.jpg" alt=""></div>
+    <h1 class="title">Super Mario</h1>
+    <div class="blockContainer">
+        <img src="images/coin.png" alt="" id="coin">
+        <img src="images/box.png" alt="" id="block">
+        <img src="images/mario.png" alt="" id="mario">
     </div>
 </body>
 
