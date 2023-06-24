@@ -5,104 +5,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Child parent</title>
-    <style>
-        .div2~p {
-            background-color: aqua;
-        }
-    </style>
-</head>
-
-<body>
-    <p>This is a Paragraph Tag 0</p>
-    <div class="div1">
-        <p>This is a Paragraph Tag 1</p>
-        <p>This is a Paragraph Tag 2</p>
-        <p>This is a Paragraph Tag 3</p>
-        <p>This is a Paragraph Tag 4</p>
-    </div>
-    <div class="div2">
-        <p>This is a Paragraph Tag 5</p>
-        <p>This is a Paragraph Tag 6</p>
-        <p>This is a Paragraph Tag 7</p>
-        <p>This is a Paragraph Tag 8</p>
-    </div>
-    <p>This is a Paragraph Tag 9</p>
-    <p>This is a Paragraph Tag 10</p>
-    <p>This is a Paragraph Tag 11</p>
-    <p>This is a Paragraph Tag 12</p>
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health</title>
     <style>
-        body {
-            background-color: aqua;
+        * {
+            margin: 0;
+            padding: 0;
         }
 
-        .navbar {
-            background-color: black;
+        .options {
+            border: 2px solid black;
+            display: flex;
+            flex-direction: row;
+            margin: 10px 20px;
+            border-radius: 25px;
         }
 
-        .navbar li {
-            list-style: none;
-            float: left;
-            padding: 10px;
-            margin: 10px;
+        .options p {
+            padding: 10px 20px;
         }
+
+        .contents{
+            display: flex;
+            flex-direction: column;
+            /* border: 10px red solid; */
+            align-items: center;
+        }
+
+        .contents p{
+            margin: 30px 30%;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        #add, #delete{
+            padding: 10px 20px;
+            margin: 10px 10px;
+        }
+        #text1{
+            resize: none;
+        }
+        
     </style>
+
 </head>
 
 <body>
-    <div class="navbar">
-        <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Contact</li>
-            <li>About Us</li>
-        </ul>
+    <div class="options">
+        <p>Home</p>
+        <p>Services</p>
+        <p>Prices</p>
+        <p>Contact</p>
+        <p>About</p>
+        
     </div>
+    <div class="contents">
+        <div class="textbox">
+        <textarea name="text1" id="text1" cols="30" rows="10"></textarea>
+    </div>
+    <div class="button">
+        <button id="add">Add</button>
+        <button id="delete">Delete</button>
+    </div>
+</div>
 </body>
+<script>
+    document.getElementById("text1").value="";
 
-</html> -->
+    let addButton = document.getElementById("add");
+    addButton.addEventListener("click", () =>
+    {
+        let para = document.createElement("p");
+        let content=document.getElementById("text1").value;
+        console.log(content);
+        let node = document.createTextNode(content);
+
+        para.appendChild(node);
+
+        let element = document.getElementsByClassName("contents");
+        console.log(element[0]);
+
+        element[0].appendChild(para);
+    });
+
+    let deleteButton = document.getElementById("delete");
+    deleteButton.addEventListener("click", () => {
+        let element=document.getElementsByClassName("contents");
+        let p_tag=element[0].getElementsByTagName("p");
+
+        console.log(p_tag[0]);
+        p_tag[p_tag.length-1].remove();
+    });
+
+    
+
+</script>
+
+</html>
